@@ -1,0 +1,18 @@
+.subsrcribe-btn {
+  background-color: white;
+  /* color: white; */
+  padding: 5px;
+  width: 130px;
+  border-radius: 4px;
+  margin-right: 30px;
+  border: transparent;
+  position: relative; /* This ensures ::after is positioned correctly */
+  z-index: 1;
+}
+
+.subsrcribe-btn:hover {
+  background-color: black;
+  color: white;
+  border: transparent;
+  padding: 5px;
+}

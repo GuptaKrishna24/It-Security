@@ -1,0 +1,227 @@
+/* .subslogo{
+    width: 13%;
+    left: 45%;
+    position: absolute;
+  }
+
+
+  .laptopmImgback{
+    align-items: center;
+    display: grid;
+  }
+
+
+  .start{
+    display: flow;
+    text-align: center;
+  }
+
+
+  .popupBack{
+   background-color: #ebebeb;
+   border-radius: 5px;
+   height: 460px;
+ }
+
+
+ .SubBtn{
+    background-color: #000;
+  color: white;
+  border: transparent;
+  padding: 8px;
+  width: 130px;
+  border-radius: 4px;
+  margin-right: 30px;
+}
+
+.SubBtn:hover{
+    background-color: #000;
+}
+ 
+ 
+.modal-backdrop{
+    --bs-backdrop-opacity:1;
+  }
+  
+  
+  .modal{
+
+    --bs-modal-width:1000px !important;
+  }
+  
+  .modal-dialog{
+    margin-top: 130px !important;
+  }
+  
+
+.modal-header{
+  padding: 20px !important;
+}
+
+.modal-backdrop.show{
+    opacity: 100 !important;
+}
+
+
+
+
+
+
+
+
+
+  @media (max-width: 767px) {
+    .subslogo{
+        width: 40%;
+        left: 30%;
+      }
+
+      .modal-dialog{
+        margin-top: 30px;
+      }
+  } */
+
+
+
+  .subslogo{
+    width: 17%;
+    left: 43%;
+    position: absolute;
+  }
+  
+  
+  .laptopmImgback{
+    align-items: center;
+    display: grid;
+  }
+  
+  
+  .start{
+    display: flow;
+    text-align: center;
+  }
+  
+  
+  .popupBack{
+   background-color: #ebebeb;
+   border-radius: 5px;
+   height: auto;
+  }
+  
+  .sidenav li:hover{
+  color:white;
+  font-weight: 600;
+  }
+  
+  
+  .SubBtn{
+    background-color: #000;
+  color: white;
+  border: transparent;
+  padding: 8px;
+  width: 130px;
+  border-radius: 4px;
+  margin-right: 30px;
+  }
+  
+  .SubBtn:hover{
+    background-color: #fff;
+  }
+  
+  
+  .modal-backdrop{
+    --bs-backdrop-opacity:1;
+  }
+  
+  
+  .modal{
+  
+    --bs-modal-width:1000px !important;
+  }
+  
+  .modal-dialog{
+    margin-top: 130px !important;
+  }
+  
+  
+  .modal-header{
+  padding: 20px !important;
+  }
+  
+  .modal-backdrop.show{
+    opacity: 100 !important;
+  }
+  
+  
+  .PaginatinNextBtn{
+  border: none;
+    font-size: 18px;
+    padding: 0px 8px 0px 8px;
+    margin: auto;
+    
+    
+  }
+  
+  .PaginatinNextBtn:hover{
+  background-color: #000;
+  color: white;
+  
+  }
+  
+  
+  
+  .paginationBox{
+  text-align: center;
+  
+  }
+  
+  .paginationBox button{
+  font-weight: 500 !important;
+  gap: 10px !important;
+  }
+  
+  
+  
+  .isActives{
+  background-color: #000;
+  color: white;
+  }
+  
+  
+  .dropdown-menu{
+  height: 300px;
+  overflow: auto;
+  }
+  
+  
+  
+  
+  @media (max-width: 767px) {
+    .subslogo{
+        width: 40%;
+        left: 30%;
+      }
+  
+      .modal-dialog{
+        margin-top: 18px !important;
+      }
+  }
+  
+  
+  @media (min-width: 768px) and (max-width: 1500.98px) { 
+    
+    .modal-dialog{
+      margin-top: 12px !important;
+    }
+    
+  }
+  
+  @media (min-width: 767px) and (max-width: 1200px) {
+    .locationBox{
+      display: grid;
+    }
+  
+    .locationBox div{
+      margin-top: 1px;
+    }
+  }

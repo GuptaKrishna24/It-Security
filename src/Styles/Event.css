@@ -1,0 +1,11 @@
+@media (max-width: 320px) {
+    .event-card img {
+      width: 85%;
+      height: auto;
+      max-width: 280px; /* Ensure image doesn't overflow */
+    }
+    .register_cta{
+        width: 85%;
+    }
+  }
+

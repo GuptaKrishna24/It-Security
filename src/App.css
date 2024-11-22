@@ -1,0 +1,175 @@
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.custom-space-between > *:not(:last-child) {
+  margin-right: 16px; 
+}
+.just-text {
+  text-align: left;
+  line-height: 1.4;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+.hoverHead:hover {
+  color: black !important;
+  font-weight: 900 !important;
+
+}
+
+.cardImg{
+  width: 250px;
+}
+.a-tag:hover{
+ font-weight: 600;
+}
+
+
+.a-tag {
+  text-decoration: none;
+  color: black;
+}
+
+.hr {
+  border-bottom: 1px solid #eaeaea;
+  padding: 0.5rem 0;
+}
+
+p {
+  color: black !important;
+  font-weight: 500;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.btn-sm:hover {
+  color: #000;
+}
+
+.box-Card1 .card:hover {
+  color: #000 !important;
+}
+.just-text {
+  text-align: left;
+  line-height: 1.4;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+.container-max {
+  width: 100%;
+overflow-x: hidden;
+  padding: 0 30px;
+  max-width: 1440px;
+}
+
+.swiperBox {
+  background-color: #000;
+
+  padding: 20px 15px 0px 15px;
+  font-size: 15px;
+}
+
+.redColor {
+  color: #000;
+}
+
+.btn-sm {
+  background-color: white;
+  /* color: white; */
+  padding: 5px;
+  width: 130px;
+  border-radius: 4px;
+  margin-right: 30px;
+  border: transparent;
+  position: relative; /* This ensures ::after is positioned correctly */
+  z-index: 1;
+}
+
+.btn-sm:hover {
+  background-color: black;
+  color: white;
+  border: transparent;
+  padding: 5px;
+
+}
+
+@media (max-width: 768px) {
+  .custom-space-between {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  body {
+    margin-top: 90px !important;
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+  }
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiperBox .card {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-pagination-bullet {
+  background: #000;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000 !important;
+}
+
+
+
+.lazyload-wrapper {
+  opacity: 0; /* Initially hide the lazy-loaded component */
+  transition: opacity 1.5s ease; /* Add a transition effect for opacity change */
+}
+
+.lazyload-wrapper.loaded {
+  opacity: 1; /* Show the lazy-loaded component when it's loaded */
+}
+
+
+.lazyload-wrapper.loaded1 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }
+
+  .lazyload-wrapper.loaded2 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }
+
+  .lazyload-wrapper.loaded3 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }
+
+  .lazyload-wrapper.loaded4 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }
+  .lazyload-wrapper.loaded5 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }
+
+  .lazyload-wrapper.loaded6 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }
+
+  .lazyload-wrapper.loaded7 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }
+
+  .lazyload-wrapper.loaded8 {
+    opacity: 1; /* Show the lazy-loaded component when it's loaded */
+  }

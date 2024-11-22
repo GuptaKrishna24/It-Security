@@ -1,0 +1,23 @@
+.article-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .image-container {
+    width: 40%;
+    height: auto;
+  }
+  
+  .text-container {
+    width: 60%;
+    margin-top: 0.5rem;
+  }
+  
+  .img-lazy {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  

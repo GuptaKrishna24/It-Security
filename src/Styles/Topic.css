@@ -1,0 +1,246 @@
+.topicImg {
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+}
+
+
+.max-toc{
+  width: 100%;
+overflow-x: unset !important;
+  padding: 0 30px;
+  max-width: 1440px;
+}
+
+
+.content {
+  white-space: normal;
+  /* margin-top: 45px !important; */
+}
+
+.content a{
+  color:black;
+  text-decoration: none;
+
+}
+
+
+
+.hover01 figure img {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+
+
+.video-responsive{ overflow:hidden; padding-bottom:56.25%; position:relative; height:0; margin-bottom: 25px;} 
+.video-responsive iframe{ left:0; top:0; height:100%; width:100%; position:absolute; }
+
+.content img {
+  width: 100%;
+  object-fit: contain;
+}
+ol li::marker {
+  font-size: 24px; 
+  font-weight: bold;
+}
+.content p {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  line-height: 1.7;
+  text-align: justify !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.content .td-post-content {
+  margin-top: 21px;
+  padding-bottom: 16px;
+}
+
+.content .tagdiv-type {
+  font-size: 15px;
+  line-height: 1.74;
+  color: black;
+}
+
+.content ul {
+  margin-top: 10px;
+  line-height: 2;
+}
+
+.content img {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.share-button-container {
+  position: static;
+  display: inline-block;
+  /* width: 10%; */
+}
+
+/* .share-button-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  } */
+
+.instaBackColor {
+  background-image: linear-gradient(
+    to left bottom,
+    #f9ce34,
+    #ffaf31,
+    #ff903d,
+    #ff704d,
+    #ff5160,
+    #f9396e,
+    #ef1f7e,
+    #e0008f,
+    #cf00a0,
+    #b800b3,
+    #960ec5,
+    #6228d7
+  );
+}
+
+.share-btn {
+  border: transparent;
+  width: 30px;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: default !important;
+  height: fit-content;
+}
+
+.numb {
+  /* font-family: Roboto Slab; */
+  font-size: 50px;
+  line-height: 1;
+  color: #e5e5e5;
+}
+
+.ArticleBox {
+  box-shadow: rgba(0, 0, 0, 0.24) 4px 4px 7px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+}
+
+.ArticleImg {
+  /* max-width: 250px; */
+  max-width: 160px;
+  height: auto;
+  border-radius: 20px;
+  margin: 0px 20px 0px 0px;
+}
+
+.contentTableBox {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100% !important;
+  padding: 10px 0px 0px 10px;
+  /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+  background-color: #f1f3f4;
+}
+
+
+.contentTableBox {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 50%;
+  padding: 10px 0px 0px 10px;
+  background-color: #f1f3f4;
+  position: relative; /* Default position */
+  transition: position 0.3s ease, top 0.3s ease;
+}
+
+.fixed {
+  position: fixed;
+  top: 520px; /* Adjust based on your layout */
+  width: 50%;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+.contentTableBox ol li {
+  list-style: none;
+}
+
+.hover-underline-animations {
+  display: inline-block;
+  position: relative;
+  color: #000;
+  margin-top: 3px;
+  
+}
+
+.hover-underline-animations:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animations:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+.backLine {
+  font-size: 14px;
+  font-weight: 600 !important;
+}
+
+.instabtn {
+  margin-top: 3px;
+}
+
+
+.cardImg{
+ /* width: 250px; */
+ max-width: 100%;
+}
+.newTOC{
+  position: sticky;
+  margin-left: auto ;
+  top:75px;
+
+ 
+}
+
+.authorName {
+  font-size: 13px; /* Default size */
+  /* transition: font-size 0.3s ease; Smooth transition */
+}
+
+.authorName:hover {
+  font-size: 14px; /* Increase font size on hover */
+}
+
+@media (max-width: 767px) {
+  .ArticleImg {
+    width: 160px;
+    max-width: fit-content;
+  }
+
+  .ArticleBox {
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contentTableBox {
+    width: 100% ;
+    margin-top: 10px;
+  }
+
+  .mobiletop {
+    margin-top: 30px !important;
+  }
+}

@@ -1,0 +1,81 @@
+.sidenav {
+    /* height: 21vh; */
+    height: 0;
+    animation: slideDown 0.6s forwards;
+  
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    transition: 0.3s;
+    /* left: 300px; */
+    background-color: black;
+    overflow-x: hidden;
+    /* overflow-y: scroll;  */
+    padding-top: 60px;
+    transition: 0.3s;
+    /* border-top-right-radius: 10px; */
+    border-radius: 10px;
+    /* left: 28.5%; */
+    display: flex;
+  }
+
+
+  .verticalCat {
+    color: white;
+  
+    padding: 15px 0px;
+    background: #000;
+    border-radius: 0 5px 5px 0;
+    font-size: 18px;
+  }
+  
+  .verticalCat:hover {
+    background-color: black;
+    font-weight: 500;
+  }
+  
+  
+  @keyframes slideDown {
+    0% {
+      top: -120px; /* Start position */
+    }
+    100% {
+      top: 0px; /* End position */
+    }
+  }
+  
+  .sidenav li {
+    margin-top: 27px !important;
+  
+    /* padding: 0px 10px 0px 10px; */
+    display: block;
+    transition: 0.6s;
+    color: white;
+    width: auto;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    background-color: black;
+    /* font-weight: 200; */
+    /* font-size: 18px; */
+    text-align: center;
+  
+    margin: auto;
+  }
+  
+  .sidenav a {
+    margin-top: 27px !important;
+    /* padding: 0px 10px 0px 10px; */
+    display: block;
+    transition: 0.6s ease;
+    color: white;
+    width: auto;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    background-color: black;
+    /* font-weight: 200; */
+    /* font-size: 18px; */
+    text-align: center;
+  
+    margin: auto;
+  }

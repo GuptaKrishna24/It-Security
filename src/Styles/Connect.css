@@ -1,0 +1,75 @@
+.locationBox{
+  display: flex;
+}
+
+.box-Card1{
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  /* width: 22rem !important; */
+  display: flex !important;
+  height: 100% !important;
+  
+  
+}
+
+.card{
+  border:none !important;
+}
+
+
+.cardHover{
+  padding: 10px;
+}
+
+.cardHover:hover{
+  color: #000 ;
+}
+
+.label1::after {
+  content: "Location";
+  font-size: 21px;
+}
+
+
+.emailBox{
+  display: flex;
+  justify-content: space-around;
+}
+
+.SubBtn{
+  background-color:#000 !important;
+color: white;
+border: transparent !important;
+padding: 8px;
+width: 130px;
+border-radius: 4px;
+margin-right: 30px;
+}
+
+.SubBtn:hover{
+  background-color:black !important ;
+  color: white;
+}
+
+
+.pinkColor{
+color: #000 !important;
+}
+
+
+
+
+@media (max-width: 767px) {
+  .box-Card1{
+      margin-top: 10px;
+      /* width: 22rem !important; */
+    }
+  
+    .locationBox{
+      display: grid;
+  }
+  .emailBox{
+      display: flow;
+      
+  }
+  
+}

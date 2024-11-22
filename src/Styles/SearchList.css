@@ -1,0 +1,29 @@
+.pagination-btn button{
+    border: none;
+    font-size: 18px;
+    padding: 0px 8px 0px 8px;
+}
+
+.pagination-btn button:hover{
+    background-color: #000;
+    color: white;
+}
+
+.btn-pagination .isActives{
+    background-color: #000;
+}
+
+.isActive{
+    background-color: #000 !important;
+    color: white !important;
+}
+
+.tabButton:hover{
+    background-color: #000 !important;
+    color: white !important;
+}
+
+.mainPageBtn:hover{
+    background-color: black !important;
+    color: white !important;
+}

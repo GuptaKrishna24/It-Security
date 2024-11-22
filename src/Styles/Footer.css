@@ -1,0 +1,212 @@
+.footerPadding {
+  padding: 5px;
+  color: white;
+  background-color: #000;
+  height: auto;
+}
+
+.subclickbtn {
+  cursor: pointer;
+}
+
+.socialWrapper {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* justify-content: center; */
+ 
+}
+.a-hoverhead:hover {
+  font-weight: 800;
+}
+.textbig:hover{
+  font-weight: 600
+}
+.socialCard {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #000;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+/* .otherPublic{
+  display: grid !important;
+grid-template-columns: repeat(5, 1fr);
+} */
+
+/* Krishna */
+/* Adjust styling for max width 768px */
+
+/* Krishna */
+
+.socialIcon {
+  /* width: 90%; */
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 2px;
+}
+.followPadding {
+  padding-right: 3rem;
+  padding-left: 3rem;
+  margin-top: 50px;
+}
+
+.SubBtn {
+  margin: auto !important;
+}
+
+.textdata p {
+  font-size: 14px;
+}
+
+.FootLogo {
+  width: 70%;
+  object-fit: cover;
+
+  height: auto;
+}
+
+.dd {
+  border-bottom: 1px solid white;
+}
+
+.imgPublica {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.imgPublicaCMO {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.imgET {
+  width: 100%;
+}
+
+.facebookImg {
+  border: 2px solid white;
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  border-radius: 7px;
+  width: 14%;
+}
+
+.facebookImg {
+  background-color: black;
+  margin: auto;
+  text-align: center;
+  padding: 6px;
+  border-radius: 7px;
+}
+
+.followPadding {
+  padding-right: 3rem;
+  padding-left: 3rem;
+  margin-top: 50px;
+}
+
+.iIMG {
+  width: 18px;
+  height: auto;
+}
+
+.fIMG {
+  width: 11px;
+  height: auto;
+}
+
+.xIMG {
+  width: 56%;
+  border-radius: 6px;
+  height: auto;
+}
+/* @media (max-width:768px) {
+.ximage {
+  width: 105%;
+}
+} */
+
+.otherPublic {
+  width: 50% !important;
+  text-align: center;
+  margin: auto;
+  gap: 20px;
+  display: flex;
+}
+
+.pRed {
+  color: #000;
+}
+
+.mainDiv {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.mainDiv div {
+  width: 80%;
+  /* height: 40px; */
+  padding: 7px 5px 7px 5px;
+  border-radius: 5px;
+}
+
+.ximage {
+  width: 40%;
+}
+
+@media (max-width: 576px) {
+  .spaceincontent {
+    margin-top: 10px !important;
+  }
+
+  .spaceincontentbottm {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .FootLogo {
+    width: 40%;
+  }
+
+  /* Krishna */
+
+  .footerPadding {
+    height: auto;
+  }
+
+  .otherPublic {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainDiv {
+    width: 50%;
+  }
+
+  .mainDiv div {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 992px) {
+  .mainDiv {
+    width: 100%;
+  }
+
+  .mainDiv div {
+    width: 100% !important;
+  }
+
+  .ximage {
+    width: 80%;
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <sitemap>
+    <loc>https://talkcmo.com/sitemap-posts.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://talkcmo.com/sitemap-subcategory.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://talkcmo.com/sitemap-category.xml</loc>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://talkcmo.com/sitemap-misc.xml</loc>
+  </sitemap>
+
+</sitemapindex>

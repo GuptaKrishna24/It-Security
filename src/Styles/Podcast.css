@@ -1,0 +1,37 @@
+/* .podBtn{
+    padding: 5px 10px 5px 10px;
+    border-radius: 6px;
+    background-color: rgb(15, 117, 188);
+    color: white;
+    border: none;
+  }
+
+
+  .ImgBoxGuets2{
+
+
+    height: auto;
+    width: 100%
+  } */
+
+  .podBtn{
+    padding: 5px 10px 5px 10px;
+    border-radius: 6px;
+    background-color: #000;
+    color: white;
+    border: none;
+  }
+
+
+  .ImgBoxGuets2{
+
+
+    height: auto;
+    width: 100%
+  }
+
+.podtag{
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Newer standard */
+  white-space: normal; /* Allows wrapping */
+}

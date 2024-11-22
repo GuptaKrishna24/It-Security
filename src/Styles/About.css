@@ -1,0 +1,54 @@
+.AboutInterviews{
+    /* align-items: center; */
+    margin: auto;
+    justify-content: space-around;
+    display: flex;  
+}
+.AboutLogo{
+    align-items: center;
+    display: flex;
+    
+}
+
+.AboutLogo img{
+    /* background-color:#000; */
+    border-radius: 7px;
+}
+
+.card-img-top{
+    height: 335px;
+    object-fit: cover;
+}
+
+.box-Card2{
+    width: 21rem;
+    margin-right: 10px;
+}
+
+.AboutInterviews{
+        margin-top: 50px;
+}
+
+
+@media (max-width: 767px) {
+ 
+    .AboutLogo{
+       margin-top: 50px !important;
+    }
+    .AboutInterviews{
+        display: grid;
+    }
+
+    .box-Card2{
+        width: 94%;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .AboutInterviews{
+        margin-top: 10px;
+    }
+
+}

@@ -1,0 +1,99 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchBox {
+  position: absolute;
+  background-color: white;
+  margin-top: 25px;
+  width: 22%;
+ 
+  max-width: 50%;
+  border-radius: 10px;
+  padding-left: 0px;
+  /* height: 316px; */
+  height: auto;
+  overflow-x: hidden;
+}
+.searchBox a{
+  text-decoration: none;
+}
+
+.searchField {
+  margin-top: 8px;
+
+  list-style: none;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.searcMainBox {
+  position: fixed;
+  width: 100%;
+}
+.noResult {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+.hoverHead{
+  list-style: none;
+  
+  
+}
+
+
+
+.allResult {
+  text-align: center !important;
+  color: white;
+  /* align-items: center; */
+  margin: auto;
+  display: block;
+  padding: 5px;
+  background-color: #000;
+  font-weight: 500;
+  border-top: 1px solid #d9d9d9;
+  font-size: 14px;
+}
+
+.wrapLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .search-sub-comp {
+    display: none;
+  }
+
+  .Desktopresponsive {
+    display: none;
+  }
+  .searchBox{
+    max-width: 70%;
+    width: 100%;
+  }
+
+  .searchField{
+    color: black !important;
+    font-size: 12px !important;
+    white-space: pre-wrap;
+  }
+  .wrap-search {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between;
+    margin-top: 45px;
+    width: 100%;
+  }
+
+  .search-icon {
+    background-color: black;
+    margin-bottom: 20px;
+  }
+}

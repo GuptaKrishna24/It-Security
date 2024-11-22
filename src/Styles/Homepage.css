@@ -1,0 +1,249 @@
+a {
+  text-decoration: none;
+}
+
+.paddings {
+  padding: 0px 0px 0px 0px;
+}
+
+.p_size1 {
+  font-size: 15px;
+}
+
+.tabBtn {
+  justify-content: center;
+  border: none;
+}
+
+.nav-tabs .nav-link {
+  padding: 3px 15px 3px 15px;
+}
+
+.nav-tabs {
+  border-bottom: none !important;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border-color: none !important;
+  background-color: #000 !important;
+  color: white !important;
+}
+
+
+.mainSecondBox {
+  display: flex;
+  gap: 11px;
+}
+
+.homeImg1 {
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* .homeImg {
+  width: 100% !important;
+  height: auto;
+    border-radius: 15px !important;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.homeImg:hover {
+
+  transition: all 0.5s;
+  transform: scale(1.05);
+} */
+
+
+/* DataComp.css */
+.image-container {
+  position: relative;
+  width: 100% !important;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.homeImg {
+  width: 100% ;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover .homeImg {
+
+  transition: all 0.5s;
+  transform: scale(1.1);
+}
+
+
+
+.btn-nav {
+  background-color: #000;
+  color: #000;
+  border: none;
+}
+
+.podText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 65vh; */
+}
+
+.btn-pod {
+  background-color: #000;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 5px 10px 5px 10px;
+}
+
+.borderR {
+  border-right: 1px solid #eaeaea;
+}
+
+.borderL {
+  border-left: 1px solid #eaeaea;
+}
+
+.borderB {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.borderT {
+  border-top: 1px solid #eaeaea;
+}
+.hoverHead.fw-bold:hover {
+  font-weight: 900 !important;
+}
+.hoverHead.line-clamp:hover {
+  font-weight: 900 !important;
+}
+
+.hoverHead:hover {
+  color: black !important;
+
+}
+
+.line-clamp {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.line-clamp1 {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+
+
+.container-max {
+  width: 100%;
+  padding: 0 20px;
+  max-width: 1440px;
+}
+
+@media (min-width: 768px) {
+  .main-page {
+    margin-top: 9rem !important;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .mainSecondBox {
+    display: grid;
+    width: 100%;
+  }
+
+  .borderR{
+    border-right: 0px solid #eaeaea !important;
+  }
+
+  .secondBox {
+    width: 100% !important;
+  }
+
+  .paddings {
+    padding: 0px;
+  }
+  .padLR {
+    padding: 0px;
+  }
+
+  .homeImg {
+    height: auto;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .tabBtn button {
+    margin-top: 20px;
+    color: black !important;
+  }
+
+  .marTop {
+    margin-top: 20px;
+  }
+
+  .podText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+
+  .container-max {
+    padding: 10px;
+  }
+
+  .podImg {
+    float: none;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    height: auto;
+  }
+
+  body {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .borderR.borderL.borderR.borderT {
+    display: none;
+  }
+  
+
+
+
+}
+
+
+.register_cta{
+  display: block;
+    width: 100%;
+    background: #000000;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff !important;
+    margin-top: 5px;
+    padding: 3px;
+}
+
+.register_cta :hover{
+  font-weight: 800;
+  color: #fff;
+}
