@@ -1,0 +1,33 @@
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #datas {
+      padding: 15px;
+    }
+    
+  
+    .mainSecondBox {
+      flex-direction: column;
+      /* text-align: center; */
+    }
+  
+    .a-tag img {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .textCardStyle {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Adjustments for larger screens */
+  @media (min-width: 769px) {
+    .mainSecondBox {
+      flex-direction: row;
+    }
+  }
+  
+
+
+

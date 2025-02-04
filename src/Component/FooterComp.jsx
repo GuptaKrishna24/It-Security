@@ -4,7 +4,7 @@ import facebook from "../Images/facebook-f.webp";
 import instagram from "../Images/instagram.webp";
 import linkedin from "../Images/linkedin.webp";
 import twitter from "../Images/whiteTwitter.webp";
-import abcIT from "../Images/Itnew11.webp";
+import abcIT from "../Images/itcmo.webp";
 import abcMartech from "../Images/abcMartech.webp";
 import abcDev from "../Images/DevNew.webp";
 import abcFin from "../Images/FintechNew.webp";
@@ -293,7 +293,7 @@ export function FooterComp() {
                     </a>
                   </div>
                   <div className="socialCard">
-                    <a href="https://www.instagram.com/enterprisetalk/">
+                    <a href="https://www.instagram.com/itsecuritywire/">
                       <source srcSet={instagram1} type="image/webp" />
                       <img
                         className="socialIcon"
@@ -351,11 +351,11 @@ export function FooterComp() {
               </>
 
               <>
-              <a href="https://itsecurity.com/">
+              <a href="https://talkcmo.com/">
                   <img
                     className="imgPublicaEnter"
                     style={{
-                      width: "130px",
+                      width: "90px",
                       height: "37px",
                       marginTop: "10px",
                     }}
@@ -364,7 +364,7 @@ export function FooterComp() {
                     sizes="150px"
                     alt="talkit"
                     width="150"
-                    height="35"
+                    height="auto"
                     loading="lazy"
                   />
                 </a>

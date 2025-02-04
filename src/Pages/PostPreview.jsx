@@ -16,7 +16,6 @@ import Skeleton from "react-loading-skeleton";
 import { Helmet } from "react-helmet";
 import LazyLoad from "react-lazyload";
 
-
 const Topic = () => {
   const options = {
     year: "numeric",
@@ -24,7 +23,6 @@ const Topic = () => {
     day: "numeric",
   };
 
-  
   const isLargeScreen = useMediaQuery({ query: "(min-width: 768px)" });
 
   // Scroll to top function
@@ -71,19 +69,13 @@ const Topic = () => {
   const { cat_slug, post_name } = useParams();
   const [accordionOpen, setAccordionOpen] = useState(false);
 
-  const [data, setData] = useState(
-    null
-  );
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [authorId, setAuthorId] = useState("");
   const [error, setError] = useState(null);
   const [headings, setHeadings] = useState([]);
-  const [relatedData, setRelatedData] = useState(
-     []
-  );
-  const [postData, setPostData] = useState(
-    []
-  );
+  const [relatedData, setRelatedData] = useState([]);
+  const [postData, setPostData] = useState([]);
   const [authorData, setAuthorData] = useState(null);
   const [htmlContent, setHtmlContent] = useState("");
   const [activeHeadingId, setActiveHeadingId] = useState(null);
@@ -587,8 +579,9 @@ const Topic = () => {
                       <Skeleton count={4} style={{ marginTop: "5px" }} />
                     </div>
                   )
-                : !data?.podcast_link && data?.banner_img && data?.banner_show === 1 && (
-                
+                : !data?.podcast_link &&
+                  data?.banner_img &&
+                  data?.banner_show === 1 && (
                     <div className="mt-3">
                       <img
                         className="topicImg"
@@ -660,7 +653,6 @@ const Topic = () => {
                     ></iframe>
                   </div>
                 )}
-                
               </div>
 
               <div
@@ -668,50 +660,43 @@ const Topic = () => {
                 dangerouslySetInnerHTML={{ __html: updatedHtmlContent }}
               ></div>
 
-
-
               <LazyLoad className={className1}>
-              <div
-                className="ArticleBox  mb-5"
-                style={{ alignItems: "center" }}
-              >
-                <>
-                  <div>
-                    <img
-                      className="ArticleImg"
-                      src={`${webPath}${
-                        authorData?.author_photo ||
-                        "/uploads/author-profiles/Author-Image.jpg"
-                      }?width=300`}
-                      alt={authorData?.author_name}
-                      width="150"
-                      height="80"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div style={{ fontSize: "14px", padding: "10px" }}>
-                    <h2 className="fw-bold h6">
-                      {authorData?.author_display_name}
-                    </h2>
-                    <p>{authorData?.author_description}</p>
-                    {/* <p
+                <div
+                  className="ArticleBox  mb-5"
+                  style={{ alignItems: "center" }}
+                >
+                  <>
+                    <div>
+                      <img
+                        className="ArticleImg"
+                        src={`${webPath}${
+                          authorData?.author_photo ||
+                          "/uploads/author-profiles/Author-Image.jpg"
+                        }?width=300`}
+                        alt={authorData?.author_name}
+                        width="150"
+                        height="80"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div style={{ fontSize: "14px", padding: "10px" }}>
+                      <h2 className="fw-bold h6">
+                        {authorData?.author_display_name}
+                      </h2>
+                      <p>{authorData?.author_description}</p>
+                      {/* <p
                             dangerouslySetInnerHTML={{
                               __html: authorData?.author_description,
                             }}
                           /> */}
-                  </div>
-                </>
-              </div>
+                    </div>
+                  </>
+                </div>
               </LazyLoad>
-
-
-
             </div>
 
             <div className=" mt-5">
-              <h3 className="fw-bold borderB py-1 h4">
-                More from Talk cmo
-              </h3>
+              <h3 className="fw-bold borderB py-1 h4">More from Talk cmo</h3>
 
               {postData?.map((item, index) => (
                 <div

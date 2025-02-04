@@ -9,3 +9,10 @@
     }
   }
 
+  @media (max-width: 480px) {
+    .responsive-desc {
+      width: 150px;
+      height: 2.4em; /* Height for 2 lines */
+      WebkitLineClamp: 2;
+    }
+  }

@@ -123,9 +123,9 @@ export function GuestComp() {
                           src={`${webPath}${item?.banner_img}?width=${dataCompWidth}`}
                           alt={item.post_name}
                           loading="lazy"
-                          width="100"
-                          height="60"
-                          style={{ width: "100%", height: "200px" }}
+                          width="auto"
+                          height="auto"
+                          style={{ width: "100%", height: "auto" }}
                         />
                         <div className="card-body" style={{ height: "157px" }}>
                           <h3 className="card-title h5  fw-bold hoverHead line-clamp">

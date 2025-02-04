@@ -4,14 +4,13 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DataComp } from "../Component/DataComp";
 import axios from "axios";
-
+import authorImg from '../Images/Author.jpg';
+import "../Styles/Authorpage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { CardComp } from "../Component/CardComp";
 import TextCard from "../Component/TextCard";
 import { API_ROOT, webPath } from "../apiConfig";
-
-
 
 const AuthorPage = () => {
   const navigate = useNavigate();
@@ -297,188 +296,169 @@ const AuthorPage = () => {
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <>
-                      
-                        <div className="row">
-                          {Array.isArray(author) && author.length > 0 ? (
-                            author.map((item, i) => (
-                              <div key={i} className="col-md-10">
+                      <div className="row">
+                        {Array.isArray(author) && author.length > 0
+                          ? author.map((item, i) => (
+                              <div key={i} className="col-md-10 col-12">
                                 <div className="mainSecondBox mt-3">
                                   <a
-                                    className="a-tag"
+                                    className="a-tag d-flex flex-column flex-md-row align-items-center text-center text-md-start"
                                     href={`/${item?.cat_slug}/${item?.post_name}`}
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "flex-start",
-                                    }} // Flexbox for horizontal alignment
                                   >
+                                    {/* Image Section */}
                                     <img
-                                      src={`${webPath}${item.author_photo}`}
+                                      src={item.author_photo ? `${webPath}${item.author_photo}` : authorImg}
                                       alt={item.post_name}
+                                      className="img-fluid mb-3 mb-md-0"
                                       style={{
                                         width: "150px",
                                         height: "auto",
-                                        marginRight: "10px",
-                                      }} // Adjust image size
+                                    
+                                      }}
+                                      onClick={(e) => e.preventDefault()} // Prevent navigation when image is clicked
                                     />
+
+                                    {/* Text Section */}
                                     <div>
-                                      <p
-                                        style={{
-                                          marginTop: "30px",
-                                          alignItems: "center",
-                                          justifyContent: "center",
-                                        }}
-                                      >
+                                      <p className="m-1">
                                         {item?.author_description}
-                                      </p>{" "}
+                                      </p>
                                     </div>
                                   </a>
                                 </div>
                               </div>
                             ))
-                          ) : (
-                            showNoDataMessage && <p>No author data available.</p>
-                          )}
-                        </div>
-                     
+                          : showNoDataMessage && (
+                              <p>No author data available.</p>
+                            )}
+                      </div>
 
-                      <div className="container mt-5 mb-5 borderT">
-                      
-                          <div className="row">
-                            <div className="col-md-8 col-12">
-                              {postData?.map((item) => (
-                                <div
-                                  key={item.id}
-                                  className="d-flex justify-content-evenly mt-2"
-                                >
-                                  <div className="row align-items-center" style={{ width: "100%" , flex:"1" }}>
-                                    <div className="col-md-3 col-12 mt-3" style={{width:"160px"}}>
-                                      <a
-                                        className="a-tag"
-                                        href={`/${item?.cat_slug}/${item?.post_name}`}
-                                      >
-                                        <CardComp
-                                          src={`${webPath}${item?.banner_img}`}
-                                          alt={item?.name}
-                                          cardImg="cardImg"
-                                        
-                                        />
-                                      </a>
-                                    </div>
-                                    <div className="col-md-9 col-12"style={{ width: "65%" }}>
-                                      <a
-                                        className="a-tag"
-                                        href={`/${item?.cat_slug}/${item?.post_name}`}
-                                      >
-                                        <TextCard
-                                          title={item.post_title}
-                                          post_author={item.post_author}
-                                          post_date={item.post_date}
-                                          style={{
-                                            width: "300px", // Set the same width as CardComp
-                                            height: "200px", // Set the same height as CardComp
-                                           // Optionally, prevent overflow if content is too large
-                                          }}
-                                        />
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              ))}
-                              <div className="paginationBox mt-5">
-                                <a href="#datas" className="mt-1 mb-1">
-                                  <button
-                                    className="PaginatinNextBtn"
-                                    disabled={pagination.page === 1}
-                                    onClick={() => {
-                                      handlePageChange(pagination.page - 1);
-
-                                      // Adding a timeout to ensure the scroll happens after the page change
-                                      setTimeout(() => {
-                                        window.scrollTo({
-                                          top: 0,
-                                          behavior: "smooth",
-                                        });
-                                      }, 100); // Adjust the timeout as necessary
-                                    }}
-                                  >
-                                    <FontAwesomeIcon icon={faAngleLeft} />
-                                  </button>
-                                </a>
-                                {calculatePageRange().map((page) => (
-                                  <span key={page}>
-                                    <button
-                                      className={`${
-                                        pagination.page === page
-                                          ? "isActives"
-                                          : ""
-                                      } fw-bold PaginatinNextBtn`}
-                                      onClick={() => {
-                                        handlePageChange(page);
-                                        window.scrollTo({
-                                          top: 0,
-                                          behavior: "smooth",
-                                        });
-                                      }}
-                                      style={{ cursor: "pointer" }}
-                                    >
-                                      {page}
-                                    </button>
-                                  </span>
-                                ))}
-                                <a href="#datas" className="mt-1 mb-1">
-                                  <button
-                                    className="PaginatinNextBtn"
-                                    disabled={
-                                      pagination.page === pagination.totalPages
-                                    }
-                                    onClick={() => {
-                                      handlePageChange(pagination.page + 1);
-                                      // Adding a timeout to ensure the scroll happens after the page change
-                                      setTimeout(() => {
-                                        window.scrollTo({
-                                          top: 0,
-                                          behavior: "smooth",
-                                        });
-                                      }, 100); // Adjust the timeout as necessary
-                                    }}
-                                  >
-                                    <FontAwesomeIcon icon={faAngleRight} />
-                                  </button>
-                                </a>
-                              </div>
-                            </div>
-                            <div className="col-md-4 col-12">
+                      <div className="container mt-5 mb-5 borderT p-0">
+                        <div className="row">
+                          {/* Posts Section */}
+                          <div className="col-md-8 col-12 p-0">
+                            {postData?.map((item) => (
                               <div
-                                className="marTop heightAuto"
-                                style={{ textAlign: "center" }}
+                                key={item.id}
+                                className="d-flex flex-wrap justify-content-evenly mt-2"
                               >
-                                {advertisementData &&
-                                  advertisementData.length > 0 && (
+                                <div className="row align-items-center w-100">
+                                  {/* Image Section */}
+                                  <div className="col-md-3 col-12 mt-3 p-0">
                                     <a
-                                      href={`${advertisementData[0].dest_url}`}
-                                      aria-label="Visit advertisement page"
+                                      className="a-tag"
+                                      href={`/${item?.cat_slug}/${item?.post_name}`}
                                     >
-                                      <img
-                                        className="mt-5"
-                                        style={{
-                                          height: "auto",
-                                          width: "100%",
-                                        }}
-                                        src={`${webPath}${advertisementData[0].banner_img}?width=600`}
-                                        alt={advertisementData[0].banner_name}
-                                        aria-label={
-                                          advertisementData[0].banner_name
-                                        }
-                                        loading="lazy"
-                                        width="640"
-                                        height="360"
+                                      <CardComp
+                                        src={`${webPath}${item?.banner_img}`}
+                                        alt={item?.name}
+                                        cardImg="cardImg"
                                       />
                                     </a>
-                                  )}
+                                  </div>
+
+                                  {/* Text Section */}
+                                  <div className="col-md-9 col-12">
+                                    <a
+                                      className="a-tag"
+                                      href={`/${item?.cat_slug}/${item?.post_name}`}
+                                    >
+                                      <TextCard
+                                        title={item.post_title}
+                                        post_author={item.post_author}
+                                        post_date={item.post_date}
+                                      />
+                                    </a>
+                                  </div>
+                                </div>
                               </div>
+                            ))}
+
+                            {/* Pagination Section */}
+                            <div className="paginationBox mt-5">
+                              <a href="#datas" className="mt-1 mb-1">
+                                <button
+                                  className="PaginatinNextBtn"
+                                  disabled={pagination.page === 1}
+                                  onClick={() => {
+                                    handlePageChange(pagination.page - 1);
+
+                                    // Scroll to the top after the page change
+                                    setTimeout(() => {
+                                      window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                      });
+                                    }, 100);
+                                  }}
+                                >
+                                  <FontAwesomeIcon icon={faAngleLeft} />
+                                </button>
+                              </a>
+                              {calculatePageRange().map((page) => (
+                                <span key={page}>
+                                  <button
+                                    className={`${
+                                      pagination.page === page
+                                        ? "isActives"
+                                        : ""
+                                    } fw-bold PaginatinNextBtn`}
+                                    onClick={() => {
+                                      handlePageChange(page);
+                                      window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                      });
+                                    }}
+                                    style={{ cursor: "pointer" }}
+                                  >
+                                    {page}
+                                  </button>
+                                </span>
+                              ))}
+                              <a href="#datas" className="mt-1 mb-1">
+                                <button
+                                  className="PaginatinNextBtn"
+                                  disabled={
+                                    pagination.page === pagination.totalPages
+                                  }
+                                  onClick={() => {
+                                    handlePageChange(pagination.page + 1);
+                                    setTimeout(() => {
+                                      window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                      });
+                                    }, 100);
+                                  }}
+                                >
+                                  <FontAwesomeIcon icon={faAngleRight} />
+                                </button>
+                              </a>
                             </div>
                           </div>
-                      
+
+                          {/* Advertisement Section */}
+                          <div className="col-md-4 col-12 text-center mt-3">
+                            {advertisementData &&
+                              advertisementData.length > 0 && (
+                                <a
+                                  href={`${advertisementData[0].dest_url}`}
+                                  aria-label="Visit advertisement page"
+                                >
+                                  <img
+                                    className="img-fluid"
+                                    src={`${webPath}${advertisementData[0].banner_img}?width=600`}
+                                    alt={advertisementData[0].banner_name}
+                                    aria-label={
+                                      advertisementData[0].banner_name
+                                    }
+                                    loading="lazy"
+                                  />
+                                </a>
+                              )}
+                          </div>
+                        </div>
                       </div>
                     </>
                   </Tab.Pane>
@@ -491,7 +471,7 @@ const AuthorPage = () => {
 
       <div className="container container-max ">
         <div className="row mt-2 spaceincontentbottm">
-          <div className="col-md-12 mb-2 borderB">
+          <div className="col-md-12 mb-2 borderB" style={{padding:"0px"}}>
             <div>
               {advertisementData && advertisementData.length > 0 && (
                 <a href={`${advertisementData[2]?.dest_url}`}>

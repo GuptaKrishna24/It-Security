@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -7,6 +8,7 @@ import {
   TwitterIcon,
   TwitterShareButton,
 } from "react-share";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import PropTypes from 'prop-types';
 
  function SocialShare({ title, url, img }) {
@@ -24,6 +26,7 @@ import PropTypes from 'prop-types';
       <div className="share-button-container">
         <TwitterShareButton aria-label="Twitter" url={validUrl} title={title}>
           <TwitterIcon size={27} />
+          {/* <FaSquareXTwitter size={30} /> */}
         </TwitterShareButton>
       </div>
 

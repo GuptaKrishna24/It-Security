@@ -6,12 +6,10 @@ import React, {
   useMemo,
 } from "react";
 import { useMediaQuery } from "react-responsive";
-
 import TextCard from "../Component/TextCard";
 import { Tab, Tabs, TabContent } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Topic.css";
 import SocialShare from "../Component/SocialShare";
 import shareIcon from "../Images/shareIcon.webp";
@@ -57,9 +55,7 @@ const EventDetail = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const handleScrollClick = (e) => {
-    scrollToTop();
-  };
+
   const moreFromTalkCMORef = useRef(null);
   const [showTableOfContents, setShowTableOfContents] = useState(true);
   const [className1, setClassName1] = useState("");
@@ -116,20 +112,18 @@ const EventDetail = () => {
     fetchIP();
   }, []);
   const { cat_slug, post_name, event_slug } = useParams();
-  const [accordionOpen, setAccordionOpen] = useState(false);
+
   const [activeKey, setActiveKey] = useState("tab1");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [eventSlug, setEentSlug] = useState("");
-  // eslint-disable-next-line
   const [error, setError] = useState(null);
   const [headings, setHeadings] = useState([]);
-  const [relatedData, setRelatedData] = useState([]);
+
   const [postData, setPostData] = useState([]);
   const [htmlContent, setHtmlContent] = useState("");
   const [popularData, setPopularData] = useState([]);
   const [latestData, setLatestData] = useState([]);
-  // const [activeHeadingId, setActiveHeadingId] = useState(null);
+
   const navigate = useNavigate();
   const [eventData, setEventData] = useState("");
 
@@ -170,30 +164,7 @@ const EventDetail = () => {
 
     fetchLatestData();
     fetchPopularData();
-  }, []); // Runs only on component mount
-
-  // useEffect(() => {
-  //   const fetchAllData = () => {
-  //     fetchData(
-  //       `${API_ROOT}/api/post/homelatestnews`,
-  //       setLatestData,
-  //       "latestData"
-  //     );
-
-  //     fetchData(
-  //       `${API_ROOT}/api/post/homepopular`,
-  //       setPopularData,
-  //       "popularData"
-  //     );
-  //   };
-
-  //   fetchAllData();
-  // }, []);
-
-  console.log("activeKey :", activeKey);
-
-  console.log("relatedData :", relatedData);
-  console.log("popularData :", popularData);
+  }, []);
 
   const handleTabSelect = useCallback((key) => {
     setActiveKey(key);
@@ -220,8 +191,6 @@ const EventDetail = () => {
 
         const data = response.data.eventData;
         setEventData(data);
-        // setHtmlContent(dataPost.post_content);
-        // setEentSlug(dataPost.post_author_id);
       } else {
         console.error("Error fetching IP address:", ipResponse.status);
       }
@@ -336,42 +305,18 @@ const EventDetail = () => {
     setHeadings(headingsList);
   }, [htmlContent]);
 
-  const scrollToHeading = (id) => {
-    const element = document.getElementById(id);
-
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      // window.scrollBy(0, -130);
-      setTimeout(() => {
-        window.scrollBy(0, -120);
-      }, 700);
-    } else {
-      console.log("Element not found with id:", id);
-    }
-  };
-
   const tempDiv = document.createElement("div");
   tempDiv.innerHTML = htmlContent;
 
   const heading = tempDiv.querySelectorAll("h2, h3, h4");
 
-  const handleLinkClick = (e) => {
-    e.stopPropagation();
-  };
-
   heading.forEach((heading, index) => {
     heading.id = `heading-${index + 0}`;
   });
 
-  const updatedHtmlContent = tempDiv.innerHTML;
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
-  const handleHeaderClick = () => {
-    setAccordionOpen(!accordionOpen);
-  };
 
   const shareText = data?.post_title;
 
@@ -414,203 +359,206 @@ const EventDetail = () => {
         />
       </Helmet>
       <div className="container mb-5 max-toc">
-      <div className="row" style={{ overflow: "hidden" }}>
-      <div className="col-md-9 borderR">
-  <div className="paddings">
-    {/* Display the main event title */}
-    <h1 className="fw-bold mt-1 h2">{data?.event_title}</h1>
+        <div className="row" style={{ overflow: "hidden" }}>
+          <div className="col-md-9 borderR">
+            <div className="paddings">
+              {/* Display the main event title */}
+              <h1 className="fw-bold mt-1 h2">{data?.event_title}</h1>
 
-    {eventData && eventData.length > 0 && (
-      <>
-        {eventData.map((event, index) => (
-          <div key={event.event_id} className="event-item">
-            {/* Display event title only for the individual event */}
-            <div>
-              <h2 className="fw-bold mt-1 h3">{event.event_title}</h2>
-            </div>
+              {eventData && eventData.length > 0 && (
+                <>
+                  {eventData.map((event, index) => (
+                    <div key={event.event_id} className="event-item">
+                      {/* Display event title only for the individual event */}
+                      <div>
+                        <h2 className="fw-bold mt-1 h3">{event.event_title}</h2>
+                      </div>
 
-            {/* Social Share Section */}
-            <div
-              className="social-share-container"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
-                gap: "10px",
-                width: "100%",
-              }}
-            >
-              <button className="share-btn mb-1">
-                <img
-                  src={shareIcon}
-                  alt="share"
-                  width="23"
-                  height="auto"
-                  style={{
-                    padding: "1px",
-                  }}
-                />
-              </button>
+                      {/* Social Share Section */}
+                      <div
+                        className="social-share-container"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "flex-end",
+                          gap: "10px",
+                          width: "100%",
+                        }}
+                      >
+                        <button className="share-btn mb-1">
+                          <img
+                            src={shareIcon}
+                            alt="share"
+                            width="23"
+                            height="auto"
+                            style={{
+                              padding: "1px",
+                            }}
+                          />
+                        </button>
 
-              <div className="d-flex align-items-center gap-1">
-                <SocialShare
-                  url={event.event_link}
-                  title={event.event_title}
-                  img={`${webPath}${event.event_banner}`}
-                />
-                <div>
+                        <div className="d-flex align-items-center gap-1">
+                          <SocialShare
+                            url={event.event_link}
+                            title={event.event_title}
+                            img={`${webPath}${event.event_banner}`}
+                          />
+                          <div>
+                            <button
+                              onClick={handleInstagramShare}
+                              className="instaBackColor"
+                              style={{
+                                border: "none",
+                                height: "27px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
+                              aria-label="Instagram"
+                            >
+                              <FontAwesomeIcon
+                                icon={faInstagram}
+                                style={{
+                                  fontSize: "17px",
+                                  color: "#fff",
+                                }}
+                              />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
 
-                <button
-                  onClick={handleInstagramShare}
-                  className="instaBackColor"
-                  style={{
-                    border: "none",
-                    height: "27px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  aria-label="Instagram"
-                >
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    style={{
-                      fontSize: "17px",
-                      color: "#fff",
-                    }}
-                  />
-                </button>
-                </div>
-              </div>
-            </div>
+                      {/* Conditional Loading or Image */}
+                      {loading ? (
+                        isLargeScreen ? (
+                          <div className="skeleton-wrapper">
+                            <Skeleton width={850} height={450} />
+                            <Skeleton
+                              width={400}
+                              height={200}
+                              style={{ marginTop: "10px" }}
+                            />
+                            <Skeleton count={4} style={{ marginTop: "5px" }} />
+                          </div>
+                        ) : (
+                          <div className="skeleton-wrapper">
+                            <Skeleton width={350} height={180} />
+                            <Skeleton
+                              width={150}
+                              height={180}
+                              style={{ marginTop: "10px" }}
+                            />
+                            <Skeleton count={4} style={{ marginTop: "5px" }} />
+                          </div>
+                        )
+                      ) : (
+                        !event.podcast_link &&
+                        event.event_banner &&
+                        event.banner_show === 1 && (
+                          <div className="mt-3">
+                            <img
+                              className="topicImg"
+                              src={`${webPath}${event.event_banner}`}
+                              alt={event.event_title}
+                              width="150"
+                              height="100"
+                              loading="lazy"
+                            />
+                          </div>
+                        )
+                      )}
 
-            {/* Conditional Loading or Image */}
-            {loading ? (
-              isLargeScreen ? (
-                <div className="skeleton-wrapper">
-                  <Skeleton width={850} height={450} />
-                  <Skeleton
-                    width={400}
-                    height={200}
-                    style={{ marginTop: "10px" }}
-                  />
-                  <Skeleton count={4} style={{ marginTop: "5px" }} />
-                </div>
-              ) : (
-                <div className="skeleton-wrapper">
-                  <Skeleton width={350} height={180} />
-                  <Skeleton
-                    width={150}
-                    height={180}
-                    style={{ marginTop: "10px" }}
-                  />
-                  <Skeleton count={4} style={{ marginTop: "5px" }} />
-                </div>
-              )
-            ) : (
-              !event.podcast_link &&
-              event.event_banner &&
-              event.banner_show === 1 && (
-                <div className="mt-3">
-                  <img
-                    className="topicImg"
-                    src={`${webPath}${event.event_banner}`}
-                    alt={event.event_title}
-                    width="150"
-                    height="100"
-                    loading="lazy"
-                  />
-                </div>
-              )
-            )}
-
-            {/* Event Details */}
-            <div>
-              <p className="mt-4" style={{ fontSize: "18px" }}>
-                {new Date(event.event_date).toLocaleDateString(undefined, {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-            </div>
-            <div style={{ fontSize: "14px" }}>
-              <div
-                className="content mt-2"
-                dangerouslySetInnerHTML={{ __html: event.event_desc }}
-              />
+                      {/* Event Details */}
+                      <div>
+                        <p className="mt-4" style={{ fontSize: "18px" }}>
+                          {new Date(event.event_date).toLocaleDateString(
+                            undefined,
+                            {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            }
+                          )}
+                        </p>
+                      </div>
+                      <div style={{ fontSize: "14px" }}>
+                        <div
+                          className="content mt-2"
+                          dangerouslySetInnerHTML={{ __html: event.event_desc }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
             </div>
           </div>
-        ))}
-      </>
-    )}
-  </div>
-</div>
 
+          {/* Sidebar */}
+          <div className="col-md-3 col-12" style={{ minHeight: "700px" }}>
+            <Tabs
+              activeKey={activeKey}
+              onSelect={handleTabSelect}
+              id="tabs-example"
+              className="tabBtn nav-link1 colrtab"
+            >
+              {["Latest", "Popular"].map((tab, index) => (
+                <Tab
+                  key={`tab-${index}`}
+                  eventKey={`tab${index + 1}`}
+                  title={tab}
+                  className="text-black"
+                >
+                  <TabContent className="marTop">
+                    <div className="paddings">
+                      {Array.isArray(displayedData) &&
+                        displayedData.map((x) => (
+                          <a
+                            key={x.id}
+                            href={`/${x?.cat_slug}/${x?.post_name}`}
+                            className="a-tag"
+                          >
+                            <TextCard
+                              key={x.id}
+                              title={x.post_title}
+                              desc={x.post_content}
+                              post_author={x.post_author}
+                              post_date={x.post_date}
+                            />
+                          </a>
+                        ))}
+                    </div>
+                  </TabContent>
+                </Tab>
+              ))}
+            </Tabs>
 
-  {/* Sidebar */}
-  <div className="col-md-3 col-12" style={{ minHeight: "700px" }}>
-    <Tabs
-      activeKey={activeKey}
-      onSelect={handleTabSelect}
-      id="tabs-example"
-      className="tabBtn nav-link1 colrtab"
-    >
-      {["Latest", "Popular"].map((tab, index) => (
-        <Tab
-          key={`tab-${index}`}
-          eventKey={`tab${index + 1}`}
-          title={tab}
-          className="text-black"
-        >
-          <TabContent className="marTop">
-            <div className="paddings">
-              {Array.isArray(displayedData) &&
-                displayedData.map((x) => (
-                  <a key={x.id} href="#" className="a-tag">
-                    <TextCard
-                      key={x.id}
-                      title={x.post_title}
-                      desc={x.post_content}
-                      post_author={x.post_author}
-                      post_date={x.post_date}
-                    />
-                  </a>
-                ))}
+            {/* Advertisement Section */}
+            <div
+              className="marTop heightAuto"
+              style={{ textAlign: "center", height: "400px" }}
+            >
+              {advertisementData && advertisementData.length > 0 && (
+                <a
+                  href={`${advertisementData[1]?.dest_url}`}
+                  aria-label="Visit advertisement page"
+                >
+                  <img
+                    className="mt-5"
+                    style={{ height: "300px", width: "auto" }}
+                    src={`${webPath}${advertisementData[1]?.banner_img}?width=600`}
+                    alt={advertisementData[1]?.banner_name}
+                    aria-label={advertisementData[1]?.banner_name}
+                    loading="lazy"
+                    width="640"
+                    height="360"
+                  />
+                </a>
+              )}
             </div>
-          </TabContent>
-        </Tab>
-      ))}
-    </Tabs>
-
-    {/* Advertisement Section */}
-    <div
-      className="marTop heightAuto"
-      style={{ textAlign: "center", height: "400px" }}
-    >
-      {advertisementData && advertisementData.length > 0 && (
-        <a
-          href={`${advertisementData[1]?.dest_url}`}
-          aria-label="Visit advertisement page"
-        >
-          <img
-            className="mt-5"
-            style={{ height: "300px", width: "auto" }}
-            src={`${webPath}${advertisementData[1]?.banner_img}?width=600`}
-            alt={advertisementData[1]?.banner_name}
-            aria-label={advertisementData[1]?.banner_name}
-            loading="lazy"
-            width="640"
-            height="360"
-          />
-        </a>
-      )}
-    </div>
-  </div>
-</div>
-
-</div>
-
+          </div>
+        </div>
+      </div>
 
       <div className="container container-max">
         <div className="row mt-5 spaceincontentbottm">

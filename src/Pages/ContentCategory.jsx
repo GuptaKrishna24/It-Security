@@ -341,7 +341,7 @@ const ContentCategory = () => {
                                     className="d-flex justify-content-evenly mt-2"
                                   >
                                     <div className="row align-items-center">
-                                      <div className="col-md-3 col-12 mt-3">
+                                      <div className="col-md-3 col-12 mt-3 p-0">
                                         <a
                                           className="a-tag"
                                           href={`/${item?.cat_slug}/${item?.post_name}`}

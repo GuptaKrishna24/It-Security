@@ -177,9 +177,7 @@
   font-weight: bold;
 }
 
-.a-link:hover{
-  /* color: blue; */
-}
+
 
 .subNav {
   display: flex;
@@ -189,8 +187,8 @@
 
 .MainLogo {
   height: auto;
-  width: 65%;
-  margin-top: 2px;
+  margin-top: 10px;
+  width: 60%;
 }
 
 ::placeholder {
@@ -237,9 +235,13 @@
 
   }
 
-  .MainLogo{
-    width: 45%;
-  }
+  @media (max-width: 767px) {
+    .MainLogo {
+        height: auto;
+        text-align: center;
+        width: 200px;
+    }
+}
  
   .headerText {
     font-size: 15px;

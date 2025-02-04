@@ -19,6 +19,7 @@ function TagPageComp() {
   const [open, setOpen] = useState(false);
   const [showSection1, setShowSection1] = useState(false);
   const { subcat } = useParams();
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   const [data, setData] = useState(
     JSON.parse(localStorage.getItem("listData")) || null
@@ -72,6 +73,10 @@ function TagPageComp() {
           console.error("Network or unexpected error:", error.message);
         }
         setLoading(false);
+      }
+      finally {
+        setIsDataLoaded(true);
+        
       }
     }
 
@@ -297,7 +302,7 @@ function TagPageComp() {
               style={{ borderRight: "1px solid #eaeaea" }}
             >
               <>
-              {data?.featured.length>0 ?(<>      {data?.featured?.slice(0, 7)?.map((item) => (
+              {data?.featured.length>0 && isDataLoaded?(<>      {data?.featured?.slice(0, 7)?.map((item) => (
                   <>
                     <a
                       className="a-link text-black"

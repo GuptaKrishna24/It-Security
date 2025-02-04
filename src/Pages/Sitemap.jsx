@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faClock,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import { API_ROOT } from "../apiConfig";
 
 const Sitemap = () => {
@@ -27,9 +31,6 @@ const Sitemap = () => {
 
   return (
     <div>
-
-
-
       <div className="container container-max">
         <div className="row">
           <div className="col-md-12">
@@ -42,38 +43,53 @@ const Sitemap = () => {
         <div className="row">
           <div className="col-md-8">
             <div>
-              <ul >
+              <ul>
                 <li>
                   <h6 className="h6 ">
-                    <a href="/" className="text-black  hoverHead text-decoration-none ">
+                    <a
+                      href="/"
+                      className="text-black  hoverHead text-decoration-none "
+                    >
                       Home
                     </a>
                   </h6>
                 </li>
                 <li>
                   <h6 className="h6 ">
-                    <a href="/about" className="text-black  hoverHead text-decoration-none ">
+                    <a
+                      href="/about"
+                      className="text-black  hoverHead text-decoration-none "
+                    >
                       About
                     </a>
                   </h6>
                 </li>
                 <li>
                   <h6 className="h6 ">
-                    <a href="/contact-us" className="text-black  hoverHead text-decoration-none ">
+                    <a
+                      href="/contact-us"
+                      className="text-black  hoverHead text-decoration-none "
+                    >
                       Contact Us
                     </a>
                   </h6>
                 </li>
                 <li>
                   <h6 className="h6 ">
-                    <a href="/opt-out-form" className="text-black  hoverHead text-decoration-none ">
+                    <a
+                      href="/opt-out-form"
+                      className="text-black  hoverHead text-decoration-none "
+                    >
                       Do Not Sell My Information
                     </a>
                   </h6>
                 </li>
                 <li>
                   <h6 className="h6 ">
-                    <a href="/privacy" className="text-black  hoverHead text-decoration-none ">
+                    <a
+                      href="/privacy-policy"
+                      className="text-black  hoverHead text-decoration-none "
+                    >
                       Privacy Policy
                     </a>
                   </h6>
@@ -81,7 +97,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/news"
+                      href="https://itsecuritywire.com/topic/news"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       News
@@ -91,7 +107,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/featured"
+                      href="https://itsecuritywire.com/topic/featured"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       Article
@@ -101,7 +117,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/podcasts"
+                      href="https://itsecuritywire.com/topic/podcasts"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       Podcasts
@@ -111,7 +127,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/interview"
+                      href="https://itsecuritywire.com/topic/interview"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       Featured Interview
@@ -121,7 +137,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/guest-author"
+                      href="https://itsecuritywire.com/topic/guest-author"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       Guest Posts
@@ -131,8 +147,9 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/quick-bytes"
-                      className="text-black  hoverHead " style={{textDecoration:"none"}}
+                      href="https://itsecuritywire.com/topic/quick-bytes"
+                      className="text-black  hoverHead "
+                      style={{ textDecoration: "none" }}
                     >
                       Quick Bytes
                     </a>
@@ -141,7 +158,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/featured"
+                      href="https://itsecuritywire.com/topic/featured"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       Articles
@@ -151,7 +168,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/future-ready"
+                      href="https://itsecuritywire.com/topic/future-ready"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       Future Ready
@@ -161,7 +178,7 @@ const Sitemap = () => {
                 <li>
                   <h6 className="h6 ">
                     <a
-                      href="https://talkcmo.ondotmail.com/topic/learning-center"
+                      href="https://itsecuritywire.com/topic/learning-center"
                       className="text-black  hoverHead text-decoration-none "
                     >
                       Learning Center
@@ -203,27 +220,33 @@ const Sitemap = () => {
 
               <div class="border mt-2">
                 <div class="d-flex py-2 ps-3 align-items-center">
-                <FontAwesomeIcon icon={faClock} className="me-2" />
+                  <FontAwesomeIcon icon={faClock} className="me-2" />
                   <p class="ms-4 mt-1">Available 24/7</p>
                 </div>
               </div>
 
               <div class="border mt-2">
                 <div class="d-flex py-2 ps-3 align-items-center">
-               
-                <FontAwesomeIcon icon={faPhone} className="me-2" />
+                  <FontAwesomeIcon icon={faPhone} className="me-2" />
                   <p class="ms-4 mt-1">
-                    <a href="tel:+18005462816" className="text-black text-decoration-none">1800-546-2816</a>
+                    <a
+                      href="tel:+18005462816"
+                      className="text-black text-decoration-none"
+                    >
+                      1800-546-2816
+                    </a>
                   </p>
                 </div>
               </div>
 
               <div class="border mt-2">
                 <div class="d-flex py-2 ps-3 align-items-center">
-             
-                <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />
                   <p class="ms-4 mt-1">
-                    <a href="mailto:media@talkcmo.com" className="text-black text-decoration-none">
+                    <a
+                      href="mailto:media@talkcmo.com"
+                      className="text-black text-decoration-none"
+                    >
                       Media@TalkCMO.com
                     </a>
                   </p>
@@ -232,14 +255,15 @@ const Sitemap = () => {
 
               <div class="border mt-2">
                 <div class="d-flex py-2 ps-3 align-items-center">
-                 
-                <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />
                   <p class="ms-4 mt-1">
-                    <a href="mailto:sales@talkcmo.com" className="text-black text-decoration-none">
+                    <a
+                      href="mailto:sales@talkcmo.com"
+                      className="text-black text-decoration-none"
+                    >
                       Sales@TalkCMO.com
                     </a>
                   </p>
-                 
                 </div>
               </div>
             </div>

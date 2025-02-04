@@ -179,6 +179,48 @@ const Topic = () => {
 
   console.log("data :", data);
 
+
+  //Krishna
+
+  useEffect(() => {
+    const fetchData = async () => {
+    try {
+    // Get the current URL
+    const currentURL = 'https://itsecuritywire.com' + window.location.pathname;
+    // const currentURL = https://enterprisetalk.com/${cat_slug}/${post_name};
+   
+    // Make a POST request to the API
+    const response = await fetch(`${API_ROOT}/api/url_redirect/check_redirect`, {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ current_url: currentURL })
+    });
+    console.log(currentURL)
+   
+    // Check if the response is successful
+    if (response.ok) {
+    const data = await response.json();
+    const redirectURL = data.urlDetails[0].redirect_url;
+    console.log({ redirectURL });
+    // If the API returns a redirect URL, redirect the page
+    if (redirectURL) {
+    window.location.href = redirectURL;
+    }
+    } else {
+    console.error('Failed to fetch data:', response.statusText);
+    }
+    } catch (error) {
+    console.error('Error:', error);
+    }
+    };
+   
+    fetchData();
+    }, []);
+
+  //Krishna
+
   const fetchData = useCallback(async () => {
     try {
       const ipResponse = await axios.get("https://api64.ipify.org?format=json");
@@ -477,6 +519,23 @@ const Topic = () => {
   //   schemaData5 = null;
   // }
 
+
+  const meta = {
+    title: data?.post_title,
+    description: data?.post_title,
+    image: `${webPath}${data?.banner_img}`, // Proper template literal
+    url: `https://itsecuritywire.com/${cat_slug}/${post_name}`, // Proper template literal
+    canonical: `https://itsecuritywire.com/${cat_slug}/${post_name}`, // Proper template literal
+    meta: {
+      property: {
+        "og:title": data?.post_title,
+        "og:description": data?.post_title,
+        "og:image": `${webPath}${data?.banner_img}`, // Proper template literal
+        "og:url": `https://itsecuritywire.com/${cat_slug}/${post_name}`, // Proper template literal
+      },
+    },
+  };
+  
   const shareText = data?.post_title;
 
   // const shareUrl = `https://talkcmo.com/${cat_slug}/${post_name}`;
@@ -511,7 +570,7 @@ const Topic = () => {
         <meta
           name="image"
           property="og:image"
-          content="https://enterprisetalk.com/static/media/enterpriseLogo.0c9f185de2e44cf44932.webp"
+          content="https://itsecuritywire.com/static/media/enterpriseLogo.0c9f185de2e44cf44932.webp"
         />
         <meta
           name="description"
@@ -523,7 +582,7 @@ const Topic = () => {
         <div className="row">
           <div className="col-md-9 borderR">
             <div className="paddings ">
-              <h1 className="fw-bold mt-1 h2 ">{data?.post_title}</h1>
+              <h1 className="fw-bold mt-1 h2">{data?.post_title}</h1>
 
               <div
                 style={{ lineHeight: "2" }}
@@ -531,25 +590,32 @@ const Topic = () => {
               >
                 {data && (
                   <>
-  <div>
-  <p className="mt-1" style={{ fontSize: "13px", display: "flex", alignItems: "center" }}>
-    By{" "}
-    <a
-      style={{ textDecoration: "none", marginLeft: "4px", marginRight: "4px" }}
-      className="headerText"
-      href={`/author/${data?.author_name}`}
-    >
-      <span className="fw-bold authorName">{data?.post_author}</span>
-    </a>
-    |{" "}
-    <span style={{ marginLeft: "4px" }}>
-      {new Date(data?.post_date).toLocaleDateString(undefined, options)}
-    </span>
-  </p>
-</div>
+                    <div>
+                    <p className="mt-1" style={{fontSize:"13px"}}>
 
-
-
+                        By{" "}
+                        <a
+                          style={{
+                            textDecoration: "none",
+                            marginLeft: "4px",
+                            marginRight: "4px",
+                          }}
+                          className="headerText"
+                          href={`/author/${data?.author_name}`}
+                        >
+                          <span className="fw-bold authorName">
+                            {data?.post_author}
+                          </span>
+                        </a>
+                        |{" "}
+                        <span style={{ marginLeft: "4px" }}>
+                          {new Date(data?.post_date).toLocaleDateString(
+                            undefined,
+                            options
+                          )}
+                        </span>
+                      </p>
+                    </div>
 
                     <div className="d-flex gap-1">
                       <button className="share-btn mb-1">
@@ -566,11 +632,11 @@ const Topic = () => {
                         />
                       </button>
                       <SocialShare
-                        url={data?.url}
+                        url={meta?.url}
                         title={data?.post_title}
                         img={`${webPath}${data?.banner_img}`}
                       />
-                      <div className="share-button-container instabtn">
+                      {/* <div className="share-button-container instabtn">
                         <button
                           onClick={handleInstagramShare}
                           className="instaBackColor"
@@ -586,7 +652,7 @@ const Topic = () => {
                             }}
                           />
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </>
                 )}
@@ -708,8 +774,14 @@ const Topic = () => {
               </div>
 
               <LazyLoad className={className1}>
+                
+<a
+                          style={{ textDecoration: "none" }}
+                          className="headerText"
+                          href={`/author/${data?.author_name}`}
+                        >
                 <div
-                  className="ArticleBox  mb-5"
+                  className="ArticleBox  mt-3 mb-3"
                   style={{ alignItems: "center" }}
                 >
                   <>
@@ -728,19 +800,20 @@ const Topic = () => {
                     </div>
                     <div style={{ fontSize: "14px", padding: "10px" }}>
                       <h2 className="fw-bold h6 ">
-                        <a
+                        {/* <a
                           style={{ textDecoration: "none" }}
                           className="headerText"
                           href={`/author/${data?.author_name}`}
-                        >
+                        > */}
                           {authorData?.author_display_name}
-                        </a>
+                        {/* </a> */}
                       </h2>
 
                       <p>{authorData?.author_description}</p>
                     </div>
                   </>
                 </div>
+                </a>
               </LazyLoad>
             </div>
 
@@ -756,7 +829,7 @@ const Topic = () => {
                     className="d-flex justify-content-evenly container gap-4"
                   >
                     <div className="row">
-                      <div className="col-md-3 col-12 mt-3">
+                      <div className="col-md-3 col-12 mt-3 p-0">
                         <a
                           className="a-tag"
                           href={`/${item?.cat_slug}/${item?.post_name}`}

@@ -1,15 +1,12 @@
 import React, { lazy } from "react";
 import { Navbar } from "react-bootstrap";
 
-import newlogo from "../Images/Itnew11.webp"
-
+import newlogo from "../Images/Itnew11.webp";
 
 const Sidebar = lazy(() => import("./Sidebar"));
 const SearchSubComp = lazy(() => import("./SearchSubComp"));
 
 const MainNavComp = () => {
- 
-
   return (
     <div className="fixed-top nav-title">
       <Navbar
@@ -27,8 +24,8 @@ const MainNavComp = () => {
                   className="MainLogo"
                   src={newlogo}
                   alt="Logo"
-                  width="130"
-                  height="60"
+                  width="180"
+                  height="80"
                   loading="lazy"
                 />
               </a>
@@ -36,11 +33,9 @@ const MainNavComp = () => {
           </div>
         </div>
 
-    
-          <div className="Desktopresponsive">
-            <SearchSubComp />
-          </div>
-     
+        <div className="Desktopresponsive">
+          <SearchSubComp />
+        </div>
       </Navbar>
     </div>
   );

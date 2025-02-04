@@ -1,5 +1,5 @@
-const API_ROOT = 'https://app-node-itsecuritywire.ondotmail.com:3033';
+const API_ROOT = ' https://app-node.itsecuritywire.com:3020';
 
-const webPath = 'https://itsec.ondotmail.com'
+const webPath = 'https://itsecuritywire.com'
 
 export { API_ROOT , webPath};

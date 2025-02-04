@@ -55,7 +55,7 @@ export const DataComp = React.memo(
                   By <span className="fw-bold">{post_author}</span>
                 </>
               )}
-              {post_author && post_location && " | "}
+              {post_author && post_location || " | "}
               {post_location && <>{post_location}</>}
               {post_date &&
                 "" + new Date(post_date).toLocaleDateString(undefined, options)}
